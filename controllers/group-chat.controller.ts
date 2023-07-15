@@ -12,15 +12,4 @@ export class GroupChatController {
       res.status(500).json({ error: 'Failed to create group chat' });
     }
   }
-
-  public static async addUserToGroupChat(req: Request, res: Response): Promise<void> {
-    try {
-      const { groupId, userId } = req.body;
-      await GroupChatService.addUserToGroupChat(groupId, userId);
-      res.sendStatus(204);
-    } catch (error) {
-      console.error(error);
-      res.status(500).json({ error: 'Failed to add user to group chat' });
-    }
-  }
 }

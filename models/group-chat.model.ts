@@ -11,7 +11,6 @@ class GroupChat extends Model<GroupChatAttributes> implements GroupChatAttribute
   public id!: number;
   public name!: string;
 
-  public addUser!: (user: User) => Promise<void>;
   public addUsers!: (users: User[]) => Promise<void>;
 }
 
