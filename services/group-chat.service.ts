@@ -9,13 +9,4 @@ export class GroupChatService {
     return groupChat;
   }
 
-  public static async addUserToGroupChat(groupId: number, userId: number): Promise<void> {
-    const groupChat = await GroupChat.findByPk(groupId);
-    const user = await User.findByPk(userId);
-    if (groupChat && user) {
-      await groupChat.addUser(user);
-    } else {
-      throw new Error('Group chat or user not found');
-    }
-  }
 }
